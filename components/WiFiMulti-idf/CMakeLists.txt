@@ -9,4 +9,7 @@ set(srcs
 	#`target_compile_options(${COMPONENT_LIB} PRIVATE "-DESP32")
 
 	idf_component_register(SRCS "WiFiMulti-idf.c"
-			INCLUDE_DIRS "./include"  )
+			INCLUDE_DIRS "./include" 
+			PRIV_REQUIRES esp_event esp_timer esp_wifi)
+			
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")
